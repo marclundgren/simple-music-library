@@ -1,0 +1,54 @@
+/* CSS declarations go here */
+
+.songs, .images {
+
+}
+
+.song, .image {
+	border-top: 1px solid #f0f9fb;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.song .title {
+	flex: 20;
+	/*cursor: pointer;*/
+}
+
+.song {
+	cursor: pointer;
+}
+
+.song:hover {
+	background-color: #0AE534;
+	-webkit-transition: background-color 1000ms linear;
+	-moz-transition: background-color 1000ms linear;
+	-o-transition: background-color 1000ms linear;
+	-ms-transition: background-color 1000ms linear;
+	transition: background-color 1000ms linear;
+}
+
+.song .remove, .image .remove {
+	flex: 1;
+	text-align: center;
+	cursor: pointer;
+	padding: 1em;
+}
+
+.content-scrollable {
+	/*-moz-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);*/
+	-webkit-overflow-scrolling: touch;
+	/*-webkit-transform: translate3d(0, 0, 0);*/
+	/*bottom: 0;*/
+	height: auto;
+	/*left: 0;*/
+	overflow-y: auto;
+	/*position: absolute;*/
+	/*right: 0;*/
+	/*top: 0;*/
+	transform: translate3d(0, 0, 0);
+	width: auto;
+}

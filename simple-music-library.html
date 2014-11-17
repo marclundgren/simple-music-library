@@ -1,0 +1,63 @@
+<head>
+  <title>simple-music-library</title>
+</head>
+
+<body>
+  <h1>Test File Upload</h1>
+
+  {{> myForm}}
+
+  <h1>Upload some music!</h1>
+
+  <ul class="songs content-scrollable">
+    {{#each songs}}
+      {{#if active}}
+        {{> player}}
+      {{else}}
+        {{> song}}
+      {{/if}}
+    {{/each}}
+  </ul>
+</body>
+
+<template name="myForm">
+  <form action="post">
+    <label> Select files to upload
+      <input name="files" type="file" class="myFileInput" multiple accept="audio/*">
+    </label>
+  </form>
+</template>
+
+<template name="hello">
+  <p>Hello.</p>
+</template>
+
+
+<template name="input">
+  <form class="new-task" enctype="multipart/form-data">
+    <input multiple="multiple" style="position: absolute;top: -9999px;left: -9999px;" id="hiddenInput" type="file" />
+
+    <button class="select" type="button">Select</button>
+
+    <button class="upload" type="submit">Upload!</button>
+  </form>
+</template>
+
+<template name="song">
+
+
+  <li class="song">
+    <span class="title">
+    {{this.name}}
+    <p>{{this.size}} b</p>
+    </span>
+      <span class="remove">x</span>
+  </li>
+</template>
+
+<template name="player">
+  <audio autobuffer controls src="/music/audio-{{_id}}-{{name}}"></audio>
+  <h3 class="title">
+    {{this.name}}
+  </h3>
+</template>
